@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalp Animasyonu</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #0b0b0b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        svg {
+            width: 300px;
+            height: 300px;
+        }
+
+        .heart-path {
+            fill: none;
+            stroke: #ff2a5f;
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawHeart 3s ease forwards infinite;
+            filter: drop-shadow(0 0 15px rgba(255, 42, 95, 0.8));
+        }
+
+        @keyframes drawHeart {
+            0% {
+                stroke-dashoffset: 1000;
+            }
+            50% {
+                stroke-dashoffset: 0;
+            }
+            100% {
+                stroke-dashoffset: -1000;
+            }
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-top: 20px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <svg viewBox="0 0 512 512">
+            <path class="heart-path" d="M256,448l-30.16-27.42C118.82,322.46,48,258.12,48,179.45,48,114.5,98.5,64,163.45,64c36.7,0,71.94,17.02,92.55,44.1C276.61,81.02,311.85,64,348.55,64,413.5,64,464,114.5,464,179.45c0,78.67-70.82,143-177.84,241.13Z"/>
+        </svg>
+        <h2>Sizin İçin...</h2>
+    </div>
+
+</body>
+</html>
